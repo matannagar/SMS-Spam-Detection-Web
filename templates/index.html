@@ -4,17 +4,30 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
+    <script src="https://kit.fontawesome.com/0b0909d81e.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>$("#alpaca-textarea-placeholder").alpaca({
+            options: {
+                type: "textarea",
+                label: "Receipt",
+                helper: "Receipt for Best Homemade Ice Cream",
+                placeholder: "Enter your favorite ice cream here...",
+                rows: 4,
+                cols: 80,
+                focus: false
+            }
+        });</script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>HiLo's Summarizer</title>
-    <meta name="description" content="bart summarizer Description">
-    <meta property="og:title" content="bart summarizer">
-    <meta property="og:description" content="bart summarizer Description">
+    <title>SMS Spam Detection Tools</title>
+    <meta property="og:title" content="SMS Spam Detection Tool">
     <meta name="generator" content="Quest">
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600,700,800">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="icon" sizes="57x57" href="../static/assets/images/hilogo.png" />
 </head>
 
@@ -30,24 +43,35 @@
         </h2>
     </div>
 
-    <form action="/index" method="POST" enctype="multipart/form-data">
-        <br>
-        <!-- max words box -->
-        <div class="max-words-outer">
-            <div id="max-words-box" class="max-words-box">
-                <label for="max-words"></label>
-                <input type="text" id="max-words" name="max-words" placeholder="Insert your SMS here...">
+    <div class="container">
+        <div class="row">
+            <form action="/index" method="POST" enctype="multipart/form-data">
+                <div class="col align-self-center">
+                    <textarea id="sms" name="sms" placeholder="Enter your favorite ice cream here..." rows="4" cols="80"
+                        class="alpaca-control form-control" name="" autocomplete="off"
+                        style="height: 134px;"></textarea>
+                    <br>
+                </div>
+        </div>
+        <div class="row">
+            <!-- Button summarizer -->
+            <div class="col align-self-center">
+                <button type="submit" class="btn btn-primary ml-3" onclick="$('#loading').show();
+    document.getElementById('bart_summary').innerHTML='';
+    document.getElementById('nofile').innerHTML ='';
+    ">Submit <i class="icon-paperplane ml-2"></i></button>
             </div>
         </div>
-        <!-- Button summarizer -->
+    </div>
 
-        <div class="buttonSummarize-outer">
-            <label for="SummarizeButton"></label>
-            <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!" onclick="$('#loading').show();
+
+    <!-- <div class="buttonSummarize-outer">
+        <label for="SummarizeButton"></label>
+        <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!" onclick="$('#loading').show();
                 document.getElementById('bart_summary').innerHTML='';
                 document.getElementById('nofile').innerHTML ='';
                 ">
-        </div>
+    </div> -->
     </form>
     <br>
     <div class=" textsummary-outer">
@@ -56,12 +80,11 @@
             <div name='summary'>
                 <br>
                 <br>
-                <p id="Summary"></p>
-                <p id="bart_summary">{{summary}} </p>
-                <p id="dictionary" style="visibility: none; display:none;"> {{dictionary}} </p>
-                <p id='filename' style="opacity: 0;">{{name}}</p>
+
+                <p id="smsPrediction"
+                    style="font-size:46px;text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;">
+                    {{label}} </p>
                 <p id="nofile">{{error}}</p>
-                <!-- <p>{{ content }}</p> -->
                 <div id="loading" style="display:none;">
                     <img src="../static/assets/images/loading.gif" alt="" />
                     <br>

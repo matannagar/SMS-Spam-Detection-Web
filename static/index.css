@@ -394,8 +394,8 @@ input[type="number"] {
 div#loading {
   background-color: #f7f9ff;
   text-align: center;
-  width: 700px;
-  height: 240px;
+  /* width: 700px;
+  height: 240px; */
 }
 
 .outer {
