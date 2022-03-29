@@ -4,6 +4,7 @@ from transformers import RobertaTokenizer
 
 from transformers import RobertaTokenizer
 
+MODEL_PATH = "C:/Users/matan/My PC (DESKTOP-RLTMVS3)/Desktop/simpletransformers_project/outputs"
 
 def prediction(sms):
     model_args = ClassificationArgs(num_train_epochs=1, use_multiprocessing=False
@@ -28,7 +29,7 @@ def prediction(sms):
     # this loads the models from the output directory
     print("starting to load model")
     model = ClassificationModel(
-        "roberta", "C:/Users/matan/My PC (DESKTOP-RLTMVS3)/Desktop/simpletransformers_project/outputs", args=model_args,
+        "roberta", MODEL_PATH, args=model_args,
         use_cuda=cuda_available
     )
     print("performing prediction")
