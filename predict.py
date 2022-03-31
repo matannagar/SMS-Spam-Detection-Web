@@ -4,21 +4,18 @@ from transformers import RobertaTokenizer
 
 from transformers import RobertaTokenizer
 
-MODEL_PATH = "C:/Users/matan/My PC (DESKTOP-RLTMVS3)/Desktop/simpletransformers_project/outputs"
+MODEL_PATH = "./outputs"
+
 
 def prediction(sms):
-    model_args = ClassificationArgs(num_train_epochs=1, use_multiprocessing=False
-                                    , use_multiprocessing_for_evaluation=False, process_count=1)
+    model_args = ClassificationArgs(num_train_epochs=1, use_multiprocessing=False,
+                                    use_multiprocessing_for_evaluation=False, process_count=1)
     model = ClassificationModel(
-        "roberta", "C:/Users/matan/My PC (DESKTOP-RLTMVS3)/Desktop/simpletransformers_project/outputs",
+        "roberta", "./outputs",
         args=model_args, use_cuda=False)
     tokenizer = RobertaTokenizer.from_pretrained(
-        "C:/Users/matan/My PC (DESKTOP-RLTMVS3)/Desktop/simpletransformers_project/outputs")
-    # logging.basicConfig(level=logging.INFO)
-    # transformers_logger = logging.getLogger("transformers")
-    # transformers_logger.setLevel(logging.WARNING)
-    #
-    # # Optional model configuration
+        "./outputs")
+
     model_args = ClassificationArgs(num_train_epochs=1)
     #
     # # Create a ClassificationModel
@@ -43,7 +40,3 @@ def prediction(sms):
         return "Non-Spam"
     else:
         return "Spam"
-
-
-# if __name__ == '__main__':
-    # print(prediction("You have just won the lottery! Click here to claim your reward!"))

@@ -1,100 +1,69 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" lang="en" style="height: 100%">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=5" />
-    <script src="https://kit.fontawesome.com/0b0909d81e.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script>$("#alpaca-textarea-placeholder").alpaca({
-            options: {
-                type: "textarea",
-                label: "Receipt",
-                helper: "Receipt for Best Homemade Ice Cream",
-                placeholder: "Enter your favorite ice cream here...",
-                rows: 4,
-                cols: 80,
-                focus: false
-            }
-        });</script>
+    <!-- <script src="https://kit.fontawesome.com/0b0909d81e.js" crossorigin="anonymous"></script> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>SMS Spam Detection Tools</title>
     <meta property="og:title" content="SMS Spam Detection Tool">
-    <meta name="generator" content="Quest">
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,500,600,700,800">
+      <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="icon" sizes="57x57" href="../static/assets/images/hilogo.png" />
+    <!-- <link rel="icon" sizes="57x57" href="../static/assets/images/hilogo.png" /> -->
 </head>
 
-<body class="websiteBody">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <div class="WebHeadlines">
-        <h1>SMS Spam Detection Tool</h1>
-        <h2>Leveraging the power of SimpleTransformers
-            <br>created by DATE
-            <br>https://github.com/bit-ml/date
-            <br>
-            <br>
-        </h2>
-    </div>
+<body>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
 
-    <div class="container">
-        <div class="row">
-            <form action="/index" method="POST" enctype="multipart/form-data">
-                <div class="col align-self-center">
-                    <textarea id="sms" name="sms" placeholder="Enter your favorite ice cream here..." rows="4" cols="80"
-                        class="alpaca-control form-control" name="" autocomplete="off"
-                        style="height: 134px;"></textarea>
-                    <br>
-                </div>
+            <div class="bar">
+                <p id="headline">SMS Spam Detection Tool</p>
+            </div>
         </div>
-        <div class="row">
+
+        <form action="/index" method="POST" enctype="multipart/form-data">
+            <div class="row">
+
+                <p id="subHead">Input SMS</p>
+                <textarea class="form-control txt_input" style="height:200px; " id="sms" name="sms"
+                    placeholder="Enter your sms message here..."></textarea>
+            </div>
+            <div class="row"></div>
+            <div class="row"></div>
             <!-- Button summarizer -->
-            <div class="col align-self-center">
-                <button type="submit" class="btn btn-primary ml-3" onclick="$('#loading').show();
+            <div class="row">
+                <center>
+                    <button id="predict" type="submit" class="btn btn-primary ml-3" onclick="$('#loading').show();
     document.getElementById('bart_summary').innerHTML='';
     document.getElementById('nofile').innerHTML ='';
-    ">Submit <i class="icon-paperplane ml-2"></i></button>
+    ">Submit </button>
+                </center>
             </div>
+        </form>
+        <div class="row">
+            <p id="subHead">Prediction</p>
+            <textarea class="form-control txt_summary" id="input_prediction" readonly>
+                {{label}}
+                {{error}}
+                </textarea>
         </div>
+        <div class="footer">
+
+            <div class="credit">Trained By Matan-Ben Nagar & Asahel Cohen</div>
+        </div>
+
     </div>
-
-
-    <!-- <div class="buttonSummarize-outer">
-        <label for="SummarizeButton"></label>
-        <input type="submit" id="SummarizeButton" name="SummarizeButton" value="Summarize!" onclick="$('#loading').show();
-                document.getElementById('bart_summary').innerHTML='';
-                document.getElementById('nofile').innerHTML ='';
-                ">
-    </div> -->
-    </form>
-    <br>
-    <div class=" textsummary-outer">
-        <!-- SUMMARIZATION TEXT BOX -->
-        <div id="textsummary" data-name="textsummary" alt="textsummary" class="textsummary">
-            <div name='summary'>
-                <br>
-                <br>
-
-                <p id="smsPrediction"
-                    style="font-size:46px;text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;">
-                    {{label}} </p>
-                <p id="nofile">{{error}}</p>
-                <div id="loading" style="display:none;">
-                    <img src="../static/assets/images/loading.gif" alt="" />
-                    <br>
-                    <p>Summarization in process...</p>
-                </div>
-            </div>
-        </div>
+    </div>
+    <div class="col-sm-1"></div>
     </div>
 </body>
 
-<script type="text/javascript" src="../static/index.js"></script>
+<!-- <script type="text/javascript" src="../static/index.js"></script> -->
 
 </html>
