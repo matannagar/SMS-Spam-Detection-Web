@@ -1,62 +1,56 @@
-# Project Title
+# Spam Detection Web Tool
 
-Simple overview of use/purpose.
+Spam SMS Detection Project implemented using NLP & Transformers. roBerta - a hugging face Transformer model for text classification is used to fine-tune to best suit data to achieve the best results. The model was deployed on the Flask server. Application deployed in Google Cloud Platform
+
+# Demo
+
+![Alt text](record.gif)
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Training SimpleTransformers model on [SMS Spam Collection Dataset](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset), resulting in 0.9993 accuracy on the test results. 
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Please refer to .[The pyTorch website](https://pytorch.org/get-started/locally/) to install PyTorch
+* Make the appropriate adjustments to enable Cuda on your PC for faster experience 
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* git clone this repository
+* Create a virtual environment using Python -m venv
+* run 
+```
+pip install -r /path/to/requirements.txt
+```
+* download [The Trained Model](https://drive.google.com/file/d/1mI19Mb4IQC4ScndHirmGIKyn6EXI9Swu/view?usp=sharing) and extract to the root repository
 
 ### Executing program
 
-* How to run the program
+#### CMD:
+* Inside the folder load CMD
+* run 
+```
+python application.py
+```
+#### PyCharm
+* load the projects folder and press Run.
+* The website will automatically load.
+* Insert your messages and press Predict.
 * Step-by-step bullets
 ```
 code blocks for commands
 ```
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/asahelcohen/"><img src="https://avatars.githubusercontent.com/u/73488196?v=4" width="100px;" alt=""/><br /><sub><b>Asahel Cohen</b></sub></a><br /> </td>
+  </tr>
+</table>
