@@ -39,10 +39,7 @@ python application.py
 * load the projects folder and press Run.
 * The website will automatically load.
 * Insert your messages and press Predict.
-* Step-by-step bullets
-```
-code blocks for commands
-```
+
 
 ## Authors
 
