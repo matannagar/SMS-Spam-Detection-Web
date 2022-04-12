@@ -20,7 +20,10 @@ Training SimpleTransformers model on [SMS Spam Collection Dataset](https://www.k
 ### Installing
 
 * git clone this repository
-* Create a virtual environment using Python -m venv
+* Create a virtual environment using 
+* ```
+Python -m venv .
+```
 * run 
 ```
 pip install -r /path/to/requirements.txt
