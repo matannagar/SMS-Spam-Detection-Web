@@ -16,6 +16,9 @@ Training SimpleTransformers model on [SMS Spam Collection Dataset](https://www.k
 
 * Please refer to .[The pyTorch website](https://pytorch.org/get-started/locally/) to install PyTorch
 * Make the appropriate adjustments to enable Cuda on your PC for faster experience 
+* Python 3.8.6
+* transformers 4.17.0
+* torch 1.9.0
 
 ### Installing
 
