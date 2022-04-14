@@ -1,6 +1,6 @@
 # Spam Detection Web Tool
 
-Spam SMS Detection Project implemented using NLP & Transformers. roBerta - a hugging face Transformer model for text classification is used to fine-tune to best suit data to achieve the best results. The model was deployed on the Flask server. Application deployed in Google Cloud Platform
+Spam SMS Detection Project implemented using NLP & Transformers. roBerta - a hugging face Transformer model for text classification is used to fine-tune to best suit data to achieve the best results. The model was deployed on the Flask server.
 
 # Demo
 
