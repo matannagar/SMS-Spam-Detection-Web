@@ -46,8 +46,19 @@ python application.py
 * The website will automatically load.
 * Insert your messages and press Predict.
 
+## Training the model yourself
 
-## Authors
+* Download the "train_model" folder onto your PC
+* Follow the installations command to set up the environment 
+* Execute
+```
+python training.py
+```
+* At the end of the training, 'outputs' folder will be created. This is your trained model.
+
+
+
+## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
