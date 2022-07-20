@@ -1,11 +1,9 @@
 import React from 'react'
 
-function Result({ result }) {
+function Result({ result, color }) {
     return (
         <div className="prediction">
-            <div className="container">
-                <h2>{result}</h2>
-            </div>
+            <h2 style={{ color: color }}>{result}</h2>
         </div>
     )
 }

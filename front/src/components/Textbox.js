@@ -1,15 +1,13 @@
 import React from 'react'
 
-function Textbox({ query, setQuery }) {
+function Textbox({ query, setQuery, setResult }) {
     return (
         <div className="input-message">
-            <div className="container">
-                <input type="text"
-                    placeholder="Insert message here..."
-                    onChange={e => setQuery(e.target.value)}
-                    value={query}
-                />
-            </div>
+            <input type="text"
+                placeholder="Insert message here..."
+                onChange={e => setQuery(e.target.value)}
+                value={query}
+            />
         </div>
     )
 }
