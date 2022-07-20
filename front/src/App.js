@@ -17,7 +17,8 @@ function App() {
   bodyFormData.append('sms', query)
 
   const classify = async function () {
-    await axios.post(`http://127.0.0.1:5000/predict`, bodyFormData)
+    // http://127.0.0.1:5000/predict
+    await axios.post(`https://flask-smsphishing.herokuapp.com/predict`, bodyFormData)
       .then(res => {
         let classification;
         if (res.data[0][0]['label'] === 'LABEL_0') {
